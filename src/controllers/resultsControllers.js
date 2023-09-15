@@ -38,7 +38,7 @@ function addDisciplina(req, res) {
   };
 
   disciplinas.push(novaAvaliacao);
-  res.status(200).send("Bimestre adicionado com sucesso!");
+  res.status(200).json(novaAvaliacao);
 }
 
 function updateAvaliacao(req, res) {
