@@ -41,8 +41,32 @@ function addDisciplina(req, res) {
   res.status(200).send("Bimestre adicionado com sucesso!");
 }
 
+function updateAvaliacao(req, res) {
+  const now = new Date();
+  const { id } = req.params;
+  const { bimestre, nota } = req.body;
+
+  const disciplina = disciplinas.find((d) => d.id == id);
+
+  if (!disciplina) {
+    return res.status(404).json({ message: "Disciplina não encontrada." });
+  }
+
+  if (!disciplina.bimestre) {
+    return res.status(404).json({ message: "Bimestre não encontrado." });
+  }
+
+  if (nota > 0 && nota <= 10) disciplina.nota = nota;
+
+  if (bimestre) disciplina.bimestre = bimestre;
+
+  disciplina.bimestre.atualizado_em = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+  res.status(200).send("Disciplina atualizada com sucesso!");
+}
+
 module.exports = {
   getDisciplinas,
   getDisciplina,
   addDisciplina,
+  updateAvaliacao,
 };
