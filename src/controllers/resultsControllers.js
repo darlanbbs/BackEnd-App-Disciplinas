@@ -64,9 +64,23 @@ function updateAvaliacao(req, res) {
   res.status(200).send("Disciplina atualizada com sucesso!");
 }
 
+function deleteAvaliacao(req, res) {
+  const { id } = req.params;
+  const disciplina = disciplinas.find((d) => d.id == id);
+
+  if (!disciplina) {
+    return res.status(404).json({ message: "Disciplina não encontrada." });
+  }
+  let filteredDisciplina = disciplinas.filter((id) => id.id !== disciplina.id);
+  // console.log(filteredDisciplina);
+  disciplinas = filteredDisciplina;
+  res.status(200).send("Disciplina deletada com sucesso!");
+}
+
 module.exports = {
   getDisciplinas,
   getDisciplina,
   addDisciplina,
   updateAvaliacao,
+  deleteAvaliacao,
 };
