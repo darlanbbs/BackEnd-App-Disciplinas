@@ -11,9 +11,11 @@ Express.js: Framework web para Node.js que simplifica a criação de aplicativos
 UUID: Biblioteca para geração de identificadores únicos.<br>
 
 # Instalação e Execução
-Certifique-se de ter o Node.js instalado em seu ambiente.<br>
-No diretório raiz do backend, execute o comando npm install para instalar as dependências.<br>
-Para iniciar o servidor, execute npm run dev.<br>
+- Certifique-se de ter o Node.js instalado em seu ambiente.
+- Clone a aplicação
+- No diretório raiz do backend, execute o comando npm install para instalar as dependências.
+- Caso queira rodar a aplicação na web está aqui >> https://github.com/darlanbbs/Front-End-Desafio
+- Para iniciar o servidor, execute npm run dev.
 
 # Endpoints da API
   - GET /disciplinas<br>
