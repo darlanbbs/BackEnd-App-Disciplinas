@@ -28,6 +28,16 @@ function addDisciplina(req, res) {
     return res.status(400).json({ message: "Nota inválida." });
   }
 
+  const disciplinaExiste = disciplinas.some(
+    (d) => d.bimestre === bimestre && d.disciplina === disciplina
+  );
+
+  if (disciplinaExiste) {
+    return res
+      .status(400)
+      .json({ message: "Disciplina já existe no bimestre." });
+  }
+
   const novaAvaliacao = {
     id: uuid.v4(),
     disciplina,
