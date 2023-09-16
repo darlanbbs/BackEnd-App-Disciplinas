@@ -44,24 +44,26 @@ function addDisciplina(req, res) {
 function updateAvaliacao(req, res) {
   const now = new Date();
   const { id } = req.params;
-  const { bimestre, nota } = req.body;
+  const { disciplina, nota } = req.body;
 
-  const disciplina = disciplinas.find((d) => d.id == id);
+  const disciplinaFinded = disciplinas.find((d) => d.id == id);
 
-  if (!disciplina) {
-    return res.status(404).json({ message: "Disciplina não encontrada." });
+  if (!disciplinaFinded) {
+    return res
+      .status(404)
+      .json({ message: "DisciplinaFinded não encontrada." });
   }
 
-  if (!disciplina.bimestre) {
+  if (!disciplinaFinded.bimestre) {
     return res.status(404).json({ message: "Bimestre não encontrado." });
   }
 
-  if (nota > 0 && nota <= 10) disciplina.nota = nota;
+  if (nota > 0 && nota <= 10) disciplinaFinded.nota = nota;
 
-  if (bimestre) disciplina.bimestre = bimestre;
+  if (disciplina) disciplinaFinded.disciplina = disciplina;
 
-  disciplina.bimestre.atualizado_em = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
-  res.status(200).send("Disciplina atualizada com sucesso!");
+  disciplinaFinded.disciplina.atualizado_em = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+  res.status(200).send(disciplinaFinded);
 }
 
 function deleteAvaliacao(req, res) {
