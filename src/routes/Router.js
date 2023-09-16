@@ -7,7 +7,7 @@ const {
   getDisciplinas,
   updateAvaliacao,
 } = require("./../controllers/resultsControllers");
-const checkDisciplinaExists = require("../middlewares/resultsMiddleware");
+
 Router.get("/disciplinas", getDisciplinas);
 Router.get("/disciplinas/:id", getDisciplina);
 Router.post("/disciplinas", addDisciplina);
