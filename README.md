@@ -68,6 +68,31 @@ Resposta
   "atualizado_em": "2023-09-14 16:30:00"
 }
 ```
+
+- PUT /disciplinas/:id<br>
+ Descrição: Atualiza o valor da nota pelo id<br>
+ (Pretendo futuramente introduzir a atualização de bimestre e disciplinas!)<br>
+   Parametro da requisição<br>
+```js
+  "id": 2,
+```
+  Corpo da Requisição(body)<br>
+```js
+  "nota": 8.5,
+```
+Resposta:
+```js
+  {
+  "id": "2",
+  "disciplina": "Artes",
+  "bimestre": "Bimestre 2",
+  "nota": 8.5,
+  "criado_em": "2023-09-14 16:00:00",
+  "atualizado_em": "2023-09-14 16:30:00"
+}
+```
+
+
 - Delete /disciplinas/:id<br>
  Descrição: Exclui uma disciplina com base no ID.<br>
 Resposta:Disciplina deletada com sucesso!
