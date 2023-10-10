@@ -3,7 +3,7 @@
 # Descrição
 
 O BackEnd desta aplicação é responsável por gerenciar as operações relacionadas às disciplinas e avaliações. Ele foi construído utilizando Node.js e Express.js para fornecer uma API robusta.<br>
-O FrontEnd desta aplicação esta aqui >> https://github.com/darlanbbs/Front-End-Desafio
+O FrontEnd desta aplicação esta aqui >> https://github.com/darlanbbs/FrontEnd-App-Disciplinas
 # Tecnologias Utilizadas
 
 Node.js: Plataforma de execução de código JavaScript do lado do servidor.<br>
@@ -14,7 +14,7 @@ UUID: Biblioteca para geração de identificadores únicos.<br>
 - Certifique-se de ter o Node.js instalado em seu ambiente.
 - Clone a aplicação
 - No diretório raiz do backend, execute o comando npm install para instalar as dependências.
-- Caso queira rodar a aplicação na web está aqui >> https://github.com/darlanbbs/Front-End-Desafio
+- Caso queira rodar a aplicação na web está aqui >> https://github.com/darlanbbs/FrontEnd-App-Disciplinas
 - Para iniciar o servidor, execute npm run dev.
 
 # Endpoints da API
